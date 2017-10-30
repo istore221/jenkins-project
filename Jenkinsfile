@@ -6,17 +6,13 @@ pipeline {
     stage('build') {
 
         steps {
-          sh 'echo test'
+          sh "mvn --version"
         }
 
     }
 
   }
 
-  post {
-    success {
-      archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-    }
-  }
+
 
 }
