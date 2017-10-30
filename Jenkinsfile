@@ -6,7 +6,7 @@ pipeline {
     stage('build') {
 
         steps {
-          sh 'env'
+          sh 'echo test'
         }
 
     }
