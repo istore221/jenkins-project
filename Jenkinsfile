@@ -7,17 +7,13 @@ pipeline {
 
         steps {
           sh 'echo $PATH'
+          sh 'done'
         }
 
     }
 
   }
 
-  post {
-    always {
-      archiveArtifacts artifacts: '**/target/*.jar',onlyIfSuccessful: true , fingerprint: true
-    }
 
-  }
 
 }
