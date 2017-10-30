@@ -6,14 +6,17 @@ pipeline {
     stage('build') {
 
         steps {
-          sh 'env'
-
+          sh 'mvn clean install'
         }
 
     }
 
   }
 
-
+  post {
+    success {
+      archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+    }
+  }
 
 }
