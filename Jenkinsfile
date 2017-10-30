@@ -6,9 +6,16 @@ pipeline {
     stage('build') {
 
         steps {
-          sh "echo 'Hello World changed again wtf'"
+          sh 'mvn clean install'
         }
 
+    }
+
+  }
+
+  post {
+    always {
+      archiveArtifacts artifacts: '**/target/*.jar',onlyIfSuccessful: true , fingerprint: true
     }
 
   }
