@@ -6,7 +6,7 @@ pipeline {
     stage('build') {
 
         steps {
-          sh "which mvn"
+          sh "/usr/local/bin/apache-maven-3.5.2/bin/mvn --version"
         }
 
     }
