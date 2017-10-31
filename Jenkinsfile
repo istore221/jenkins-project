@@ -29,7 +29,7 @@ pipeline {
         }
 
         always {
-           junit '**/target/*.xml'
+           junit '**/target/**/*.xml'
         }
   }
 
